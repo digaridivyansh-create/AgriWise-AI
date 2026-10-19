@@ -1,0 +1,39 @@
+﻿# Secrets and environment configuration
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Django runtime files
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+
+# Node and frontend builds
+node_modules/
+dist/
+.vite/
+coverage/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.backup-*
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
