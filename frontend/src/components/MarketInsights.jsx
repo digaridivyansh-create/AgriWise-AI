@@ -1,4 +1,4 @@
-﻿import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import {
   Activity,
@@ -108,7 +108,6 @@ export default function MarketInsights() {
   const [metadata, setMetadata] = useState(null);
   const [metadataLoading, setMetadataLoading] = useState(true);
   const [metadataError, setMetadataError] = useState("");
-  const [metadataReload, setMetadataReload] = useState(0);
   const [analytics, setAnalytics] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -159,7 +158,7 @@ export default function MarketInsights() {
     return () => {
       cancelled = true;
     };
-  }, [metadataReload]);
+  }, []);
 
   const updateFilter = (key, value) =>
     setFilters((current) => ({ ...current, [key]: value }));
@@ -368,18 +367,17 @@ export default function MarketInsights() {
             </p>
           )}
           {metadataError && (
-            <div role="alert" className="mt-3 rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-800">
-              <p>{metadataError}</p>
-              <button
-                type="button"
-                onClick={() => setMetadataReload((current) => current + 1)}
-                disabled={metadataLoading}
-                className="mt-3 rounded-lg border border-red-300 bg-white px-3 py-2 font-semibold text-red-800 hover:bg-red-100 disabled:cursor-not-allowed disabled:opacity-60"
-              >
-                {metadataLoading ? "Retrying?" : "Retry loading options"}
-              </button>
-              <p className="mt-2 text-xs">
-                Commodity and location dropdowns will become available when verified options load.
+            <div
+              role="alert"
+              className="mt-3 rounded-xl border border-amber-200 bg-amber-50 p-3 text-sm text-amber-950"
+            >
+              <p className="font-semibold">
+                Market options are temporarily unavailable.
+              </p>
+              <p className="mt-1">{metadataError}</p>
+              <p className="mt-2 text-xs leading-5">
+                Commodity and location filters will become available when the
+                market data service responds successfully. Please try again later.
               </p>
             </div>
           )}
@@ -828,8 +826,3 @@ export default function MarketInsights() {
     </motion.main>
   );
 }
-
-
-
-
-
