@@ -13,6 +13,7 @@ AgriWise AI is an AI-powered agriculture decision-support platform designed to h
 - **🔌 Backend API:** Django-powered backend for crop recommendations, plant health, and other agriculture services.
 
 *Note: Recommendations are decision-support suggestions and should be verified against local agricultural conditions and expert advice.*
+https://agri-wise-ai-six.vercel.app/ this is deploy link
 
 ## 🛠️ Tech Stack
 
