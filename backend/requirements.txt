@@ -1,0 +1,15 @@
+﻿Django==6.1.2
+gunicorn
+whitenoise
+django-cors-headers==4.9.0
+djangorestframework==3.18.3
+djangorestframework-simplejwt==5.5.1
+python-dotenv==1.2.4
+joblib==1.6.0
+numpy==2.5.4
+pandas==3.0.6
+scikit-learn==1.9.1
+scipy==1.18.1
+Pillow==12.3.0
+requests==2.34.2
+onnxruntime==1.31.0
